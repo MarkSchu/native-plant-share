@@ -3,40 +3,14 @@
 @tailwind utilities;
 
 :root {
- 
+ --a: #dad7cd;
+ --b: #a3b18a;
+ --c: #588157;
+ --d: #3A5A40;
+ --e: #344E41;
+ --darkgreen: #344E41;
 }
 
 body {
   padding: 1rem 4rem;
-}
-
-.landing-page nav {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 900;
-}
-
-.landing-page h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    text-align: center;
-    padding-top: 8rem;
-}
-
-.landing-page h2 {
-    font-size: 1.75rem;
-    font-weight: 900;
-}
-
-.landing-page input {
-    border: 1px solid #888;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-}
-
-.landing-page .find-or-share {
-    margin-top: 6rem;
-    display: flex;
-    max-width: 10rem;
-    margin: auto;
 }

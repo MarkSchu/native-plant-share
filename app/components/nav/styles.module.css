@@ -1,0 +1,13 @@
+.nav {
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    color: var(--darkgreen);
+}
+
+.button {
+    background-color: var(--darkgreen);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+}

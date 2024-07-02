@@ -1,0 +1,41 @@
+.header {
+    margin-top: 14rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--darkgreen);
+}
+
+.subtitle {
+    font-size: 1.75rem;
+    color: #888;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.button {
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 1rem 2.25rem;
+    border-radius: 3rem;
+    display: block;
+    width: 15rem;
+    margin: 1rem auto;
+    border: 2px var(--darkgreen) solid;
+}
+
+.findButton {
+    background-color: var(--darkgreen);
+    color: white;
+}
+
+.shareButton {
+    background-color: white;
+    color: var(--darkgreen);
+    border: 2px var(--darkgreen) solid;
+}
+
