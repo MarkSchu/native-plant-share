@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 export default function Nav() {
     return (
-        <div className={styles.nav}>
+        <div data-testid="nav" className={styles.nav}>
             <Link href="/" >
                 NPS
             </Link>

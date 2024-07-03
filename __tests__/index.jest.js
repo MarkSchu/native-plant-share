@@ -3,21 +3,28 @@ import { render, screen } from '@testing-library/react';
 import Home from '../app/page.tsx';
 
 describe('Home', () => {
+
     it ('renders a title', () => {
         render(<Home />)
         const heading = screen.getByRole('heading');
         expect(heading).toBeInTheDocument();
     });
 
-    it ('renders a find plants link', () => {
+    it ('renders the nav bar', () => {
         render(<Home />);
-        const findLink = screen.getByText('Find Plants');
-        expect(findLink).toBeInTheDocument();
+        const nav = screen.getByTestId('nav');
+        expect(nav).toBeInTheDocument();
     });
 
     it ('renders a share plants link', () => {
         render(<Home />);
-        const shareLinke = screen.getByText('Share Plants');
-        expect(shareLinke).toBeInTheDocument();
+        const findLink = screen.getByRole('link', {name: 'Share Plants'});
+        expect(findLink).toHaveProperty('href', 'http://localhost/share')
+    });
+
+    it ('renders a find plants link', () => {
+        render(<Home />);
+        const shareLink = screen.getByRole('link', {name: 'Find Plants'});
+        expect(shareLink).toHaveProperty('href', 'http://localhost/find')
     });
 });
