@@ -1,4 +1,4 @@
-import { createSharedPlant } from '@/app/actions';
+import { createSharedPlant } from '@/app/lib/actions';
 import styles from './styles.module.css';
 
 interface InputProps {
@@ -55,7 +55,11 @@ export function NewPlantForm() {
         label="Describe What You've Got"
         required={true}
       />
-      <input type="submit" value="Create!" />
+      <input 
+        type="submit" 
+        value="Create!" 
+        className={styles.button}
+      />
     </form>
   )
 }
