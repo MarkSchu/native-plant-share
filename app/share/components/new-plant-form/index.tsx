@@ -1,3 +1,6 @@
+'use client';
+
+import { useFormState } from 'react-dom';
 import { createSharedPlant } from '@/app/lib/actions';
 import styles from './styles.module.css';
 
@@ -65,9 +68,12 @@ function CheckboxGroup({ label, name, options }: CheckboxGroupProps) {
 }
 
 export function NewPlantForm() {
-  return (
-    <form action={createSharedPlant}>
 
+  const [state, formAction] = useFormState(createSharedPlant, {message: ''});
+
+  return (
+    <form action={formAction}>
+      {state?.message}
       {/* Common Name */}
       <Input 
         type="text" 
@@ -87,7 +93,7 @@ export function NewPlantForm() {
       {/* Description */}
       <TextArea 
         name="description" 
-        label="Describe What You've Got"
+        label="Describe What You've Got"  
         required={true}
       />
 
@@ -99,7 +105,7 @@ export function NewPlantForm() {
         required={true}
       />
       
-      {/* Type/Form */}
+      {/* Growth Form */}
       <select 
         name="growthForm"
       >

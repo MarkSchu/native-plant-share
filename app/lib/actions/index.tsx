@@ -15,17 +15,30 @@ const CreateSharedPlant = z.object({
   soil: z.string(),
 });
 
+export async function createSharedPlant(prevState: any, formData: FormData): Promise<any> {
+  try {
 
+    const sharedPlant = CreateSharedPlant.parse({
+      commonName: formData.get('commonName'),
+      latinName: formData.get('latinName'),
+      description: formData.get('description'),
+      growthForm: formData.get('growthForm'),
+      height: formData.get('height'),
+      sun: formData.getAll('sun').join(','),
+      soil: formData.getAll('soil').join(',')
+    });
+    
+    await prisma.sharedPlant.create({
+      data: sharedPlant
+    });
 
-export async function createSharedPlant(formData: FormData) {
-  const sharedPlant = CreateSharedPlant.parse({
-    commonName: formData.get('commonName'),
-    latinName: formData.get('latinName'),
-    description: formData.get('description'),
-    growthForm: formData.get('growthForm'),
-    height: formData.get('height'),
-    sun: formData.getAll('sun').join(','),
-    soil: formData.getAll('soil').join(',')
-  });
+  } catch(e: any) {
+    return {
+      message: 'error'
+    }
+  }
+
+  return {message: 'success'};
 }
 
+// question: how do you catch errors and display messages to user? 
